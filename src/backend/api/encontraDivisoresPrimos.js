@@ -22,4 +22,5 @@ module.exports = function encontraDivisoresPrimos(num){
     }
 
     return numbers;
+
 }

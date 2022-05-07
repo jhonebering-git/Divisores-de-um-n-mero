@@ -1,7 +1,7 @@
 const express = require('express');
 
 const server = require('./src/backend/divisores.server');
-const port = process.env.PORT || 3006;
+const port = process.env.PORT || 3007;
 const app = express();
 
 app.use('/', server);

@@ -15,5 +15,5 @@ module.exports = function encontrarDivisores(num, divisoresPrimos) {
         });
     });
 
-    return divisores.sort((a,b) => a - b);
+    return divisores;
 }
