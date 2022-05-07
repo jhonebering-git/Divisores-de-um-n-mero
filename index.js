@@ -2,11 +2,15 @@ const express = require('express');
 
 const server = require('./src/backend/divisores.server');
 const port = process.env.PORT || 3006;
-// const host = '127.0.0.1';
 const app = express();
 
+function testX() {
+    return 25;
+}
+
+module.exports = {testX};
+
 app.use('/', server);
-// app.use('/divisores/:num', server);
 
 app.get('*', (req, res) => {
     res.send('Route not found');
@@ -34,13 +38,7 @@ Exemplo:
          divisores encontrados: 1, 3, 9, 5, 15, 45 (total 6 divisores)
 4 - Separar as contas em diferentes serviços
 5 - criar testes unitários para verificar se o resultado corresponde.
-
 */
-// app.get('/', (req, res) => {
-//     res.send('Main');
-// });
-// app.get('/a1', (req, res) => {
-//     res.json({valor: 'Valor'});
-// });
+
 
 app.listen(port, () => {console.log('Servidor rodando')});
