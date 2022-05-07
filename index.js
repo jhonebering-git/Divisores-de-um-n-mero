@@ -1,21 +1,21 @@
 const express = require('express');
 
-const routes = require('./routes/routes');
+const server = require('./src/backend/divisores.server');
 const port = process.env.PORT || 3006;
 // const host = '127.0.0.1';
 const app = express();
 
-app.use('/', routes);
-// app.use('/divisores/:num', routes);
+app.use('/', server);
+// app.use('/divisores/:num', server);
 
 app.get('*', (req, res) => {
     res.send('Route not found');
 });
 
 /* ROTEIRO DO ALGORITMO DO DESAFIO
-1 - criar chamada que receba um número inteiro
-2 - criar um serviço que decompõem o os divisores primos desse número
-3 - através dos números primos encontrados, encontrar os divisores
+1 - criar chamada que receba um número inteiro  OK
+2 - criar um serviço que decompõem o os divisores primos desse número OK
+3 - através dos números primos encontrados, encontrar os divisores OK
 Exemplo: 
     45 | 3
     15 | 3
