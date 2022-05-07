@@ -8,6 +8,7 @@ api.get('/', (req, res) => {
     res.json({'Ola': 'Seja bem vindo'});
 });
 
+
 /**Pendencia, transformar esse arquivo de rotas em arquivo de chamada de api, api.get */
 api.get('/divisores/:num', (req, res) => {
     const num = parseInt(req.params.num);
