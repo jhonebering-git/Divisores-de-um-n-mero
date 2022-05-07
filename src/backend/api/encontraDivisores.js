@@ -13,7 +13,6 @@ module.exports = function encontrarDivisores(num, divisoresPrimos) {
                 divisores.push(divisor);
     
         });
-
     });
 
     return divisores;

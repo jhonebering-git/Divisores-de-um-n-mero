@@ -1,4 +1,5 @@
 const express = require('express');
+// const index = require('./index');
 
 const server = require('./src/backend/divisores.server');
 const port = process.env.PORT || 3006;
@@ -41,4 +42,9 @@ Exemplo:
 */
 
 
-app.listen(port, () => {console.log('Servidor rodando')});
+if (require.main === module){
+    app.listen(port, () => {console.log('Servidor rodando')});
+}
+
+
+module.exports = {app};
