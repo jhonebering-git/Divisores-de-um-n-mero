@@ -1,17 +1,17 @@
-const test = require('tape');
+const test = require('tape')
 const supertest = require('supertest')
 
-const express = require('express');
-const app = express();
-const server = require('./src/backend/divisores.server');
+const express = require('express')
+const app = express()
+const server = require('./src/backend/divisores.server')
 
-const divisoresDe60 = [1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60];
-const divisoresPrimosDe60 = [1, 2, 3, 5];
-const divisoresDe45 = [1, 3, 5, 9, 15, 45];
-const divisoresPrimosDe45 = [1, 3, 5];
+const divisoresDe60 = [1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+const divisoresPrimosDe60 = [1, 2, 3, 5]
+const divisoresDe45 = [1, 3, 5, 9, 15, 45]
+const divisoresPrimosDe45 = [1, 3, 5]
 
 
-app.use('/', server);
+app.use('/', server)
 
 test('GET Encontrar dividores de 60', (t) => {
     supertest(app)

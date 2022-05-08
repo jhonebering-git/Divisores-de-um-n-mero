@@ -1,17 +1,22 @@
-const express = require('express');
+const encontraDivisoresPrimos = require('./src/backend/api/encontraDivisoresPrimos')
+const encontraDivisores = require('./src/backend/api/encontraDivisores')
 
-const server = require('./src/backend/divisores.server');
-const port = process.env.PORT || 3007;
-const app = express();
+var readline = require('readline')
+var resp = ""
 
-app.use('/', server);
+var leitor = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
 
-app.get('*', (req, res) => {
-    res.send('Route not found');
-});
+leitor.question("Informe um número: ", function(num) {
 
-if (require.main === module){
-    app.listen(port, () => {console.log('Servidor rodando')});
-}
+    const divisoresPrimos = encontraDivisoresPrimos(num)
+    const divisores = encontraDivisores(num, divisoresPrimos)
+    divisoresPrimos.push(1)
 
-module.exports = {app};
+    console.log("\nDivisores Primos: " + divisoresPrimos.sort((a,b) => a - b))
+    console.log("\nDivisores: " + divisores.sort((a,b) => a - b))
+    leitor.close()
+})
+

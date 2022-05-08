@@ -1,25 +1,17 @@
-const http = require('http');
-const url = require('url');
-const port = 3000;
-const host = '127.0.0.1';
+const express = require('express')
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(req.url);
+const server = require('./src/backend/divisores.server')
+const port = process.env.PORT || 8080
+const app = express()
 
-    const params = url.parse(req.url, true).query;
+app.use('/', server)
 
-    res.write('<h1>Nome: '+params.name+'</>');
+app.get('*', (req, res) => {
+    res.send('Route not found')
+})
 
-    if(req.url == '/'){
-        res.write("<h1>Seja bem vindo</h1>");
-    } else if(req.url == '/a1') {
-        res.write("<h1>A1</h1>");
-    } else if(req.url == '/a2') {
-        res.write("<h1>A2</h1>")
-    } 
+if (require.main === module){
+    app.listen(port, () => {console.log('Servidor rodando')})
+}
 
-    res.end();
-});
-
-server.listen(port, host, 'Servidor rodando');
+module.exports = {app}
