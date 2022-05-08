@@ -7,13 +7,16 @@
     "express": "^4.18.1",
     "router": "^1.3.7",
     "supertest": "^6.2.3",
+    "swagger-autogen": "^2.21.1",
+    "swagger-ui-express": "^4.3.0",
     "tap-spec": "^5.0.0",
     "tape": "^5.5.3"
   },
   "devDependencies": {},
   "scripts": {
     "test": "node index.test | tap-spec",
-    "start": "node index.js"
+    "start": "node index.js",
+    "swagger-autogen": "node swagger.js"
   },
   "repository": {
     "type": "git",

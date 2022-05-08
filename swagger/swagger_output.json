@@ -1,0 +1,58 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/divisores/{num}": {
+      "get": {
+        "description": "Calcula todos os divisores que compõem o número.",
+        "parameters": [
+          {
+            "name": "num",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Número real que será calculado os divisores",
+            "example": 45
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/primos/{num}": {
+      "get": {
+        "description": "Calcula todos os divisores primos que compõem o número.",
+        "parameters": [
+          {
+            "name": "num",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Número real que será calculado os divisores",
+            "example": 45
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}

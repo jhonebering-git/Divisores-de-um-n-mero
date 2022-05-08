@@ -6,10 +6,21 @@ const express = require('express')
 const api = express.Router()
 
 api.get('/', (req, res) => {
-    res.json({'Ola': 'Seja bem vindo'})
+    res.redirect("/docs")
 })
 
 api.get('/divisores/:num', (req, res) => {
+/*
+  #swagger.description = 'Calcula todos os divisores que compõem o número.'
+  #swagger.parameters['num'] = {
+	description: 'Número real que será calculado os divisores',
+    type: 'integer',
+    required: true,
+    in: 'path',
+    example: 45,
+  }
+
+*/
     const num = parseInt(req.params.num)
 
     if(num === 1){
@@ -31,7 +42,17 @@ api.get('/divisores/:num', (req, res) => {
 })
 
 api.get('/primos/:num', (req, res) => {
+/*
+  #swagger.description = 'Calcula todos os divisores primos que compõem o número.'
+  #swagger.parameters['num'] = {
+	description: 'Número real que será calculado os divisores',
+    type: 'integer',
+    required: true,
+    in: 'path',
+    example: 45,
+  }
 
+*/
     const num = parseInt(req.params.num)
 
     if(num === 1){
@@ -53,9 +74,9 @@ api.get('/primos/:num', (req, res) => {
     response(res, 200, divisoresPrimos.sort((a,b) => a - b))
 })
 
-api.get('*', (req, res) => {
-    return response(res, 404)
-})
+// api.get('*', (req, res) => {
+//     return response(res, 404)
+// })
 
 
 module.exports = api
