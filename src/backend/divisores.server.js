@@ -12,6 +12,10 @@ api.get('/', (req, res) => {
 api.get('/divisores/:num', (req, res) => {
     const num = parseInt(req.params.num);
 
+    if(num === 1){
+        return response(res, 200, [1]);
+    }
+
     if(num <= 0){
         return response(res, 400);
     }
@@ -23,13 +27,16 @@ api.get('/divisores/:num', (req, res) => {
         return response(res, 403);
     }
 
-    // divisores.push(1)
     response(res, 200, divisores.sort((a,b) => a - b));
 });
 
 api.get('/primos/:num', (req, res) => {
 
     const num = parseInt(req.params.num);
+
+    if(num === 1){
+        return response(res, 200, [1]);
+    }
 
     if(num <= 0){
         return response(res, 400);
