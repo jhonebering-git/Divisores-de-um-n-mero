@@ -1,7 +1,7 @@
 # Divisores-de-um-numero
 
-Technical Challenge
 
+Descrição da atividade:
 Um cliente precisa de um sistema que seja capaz de decompor um número em todos os seus divisores, enumerando também aqueles que forem primos.
 
 ● Dado um número de entrada, o programa deve calcular todos os divisores que compõem o número.
@@ -40,6 +40,17 @@ Calcula os divisores primos do número 45
 ```http://localhost:3001/divisores/45```
 Calcula os divisores do número 45
 
+
+
+**EXECUTAR TESTES** 
+
+É possível rodar os testes unitários criados através do comando:
+
+```
+npm test
+```
+
+O resultado irá exibir informações sobre o números de testes realizados, quais foram os testes, o resultado esperado e o resultado do teste.
 
 
 **DOCUMENTAÇÃO**
